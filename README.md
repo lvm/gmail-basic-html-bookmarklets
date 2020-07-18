@@ -13,7 +13,7 @@ Note: There's an [Github Markup - open issue](https://github.com/github/markup/i
 
 Performs a search using `in:inbox is:unread` filter.  
 
-[📥 Inbox](javascript:(function(){document.querySelector("#sbq").value = "in:inbox is:unread";document.querySelector("input[name='nvp_site_mail']").click();}());)
+[📥 Inbox](javascript:(function(){document.querySelector("#sbq").value="in:inbox is:unread";document.querySelector("input[name='nvp_site_mail']").click();}());)
 
 ```javascript
 javascript: (function() {
