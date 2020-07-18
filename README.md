@@ -7,7 +7,7 @@ Just in case you're wondering wtf are they:
 
 (Source: [Bookmarklet Wikipedia page](https://en.wikipedia.org/wiki/Bookmarklet))
 
-Note: There's an [Github Markup - open issue](https://github.com/github/markup/issues/79) to allow creating `javascript:` links on `README`s, meanwhile you can either go to the [webpage version of this document](https://cyberpunk.net.ar/gmail-basic-html-bookmarklets/) or scroll down to know [how it's done in your browser](https://cyberpunk.net.ar/gmail-basic-html-bookmarklets/#how-do-i)).
+Note: There's an [Github Markup - open issue](https://github.com/github/markup/issues/79) to allow creating `javascript:` links on `README`s, meanwhile you can either go to the [webpage version of this document](https://cyberpunk.net.ar/gmail-basic-html-bookmarklets/) or scroll down to know [how it's done in your browser](#q--a)).
 
 ### Inbox
 
