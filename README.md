@@ -1,37 +1,82 @@
-## Welcome to GitHub Pages
+# Bookmarklets for Gmail Basic HTML version :email: :dash:
 
-You can use the [editor on GitHub](https://github.com/lvm/gmail-basic-html-bookmarklets/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+I prefer the [basic version](https://mail.google.com/?ui=html) because it's way simpler but perhaps _too simple_, so let me introduce these bookmarklets are in order to have a better ux.  
+Just in case you're wondering wtf are they:
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+> Bookmarklets are unobtrusive JavaScripts stored as the URL of a bookmark in a web browser or as a hyperlink on a web page.
 
-### Markdown
+(Source: [Bookmarklet Wikipedia page](https://en.wikipedia.org/wiki/Bookmarklet))
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Note: There's an [Github Markup - open issue](https://github.com/github/markup/issues/79) to allow creating `javascript:` links on `README`s, meanwhile you can either go to the [webpage version of this document](https://cyberpunk.com.ar/gmail-basic-html-bookmarklets/) or scroll down to know [how it's done in your browser](https://cyberpunk.com.ar/gmail-basic-html-bookmarklets/#how-do-i)).
 
-```markdown
-Syntax highlighted code block
+### Inbox
 
-# Header 1
-## Header 2
-### Header 3
+Performs a search using `in:inbox is:unread` filter.  
 
-- Bulleted
-- List
+[📥 Inbox](javascript:(function(){document.querySelector("#sbq").value = "in:inbox is:unread";document.querySelector("input[name='nvp_site_mail']").click();}());)
 
-1. Numbered
-2. List
+```javascript
+javascript: (function() {
+  document.querySelector("#sbq").value = "in:inbox is:unread";
+  document.querySelector("input[name='nvp_site_mail']").click();
+}());
+``` 
 
-**Bold** and _Italic_ and `Code` text
+### Unread
 
-[Link](url) and ![Image](src)
-```
+Performs a search using _whatever is in your search box_ + `is:unread` filter.  
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+[📩 Unread](javascript:(function(){var sbq=document.querySelector("#sbq");sbq.value=sbq.value+" is:unread";document.querySelector("input[name='nvp_site_mail']").click();}());)
 
-### Jekyll Themes
+```javascript
+javascript: (function() {
+  var sbq = document.querySelector("#sbq");
+  sbq.value = sbq.value +" is:unread";
+  document.querySelector("input[name='nvp_site_mail']").click();
+}());
+``` 
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/lvm/gmail-basic-html-bookmarklets/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+### Select all
 
-### Support or Contact
+Will check _every_ checkbox in the current result page.
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+[📕 Select All](javascript:(function(){var inp=document.querySelectorAll("tr > td > input");for(var i=0;i<inp.length;i++){inp[i].checked=true;}}());)
+
+```javascript
+javascript: (function() {
+  var inp = document.querySelectorAll("tr > td > input");
+  for (var i = 0; i < inp.length; i++){ inp[i].checked = true; }
+}());
+``` 
+
+### Select unread
+
+Will check only those with _white background_ (ie: unread) checkbox in the current result page.
+
+[📗 Select Unread](javascript:(function(){var inp=document.querySelectorAll("tr[bgcolor='#ffffff'] > td > input");for(var i=0;i<inp.length;i++){inp[i].checked=true;}}());)
+
+```javascript
+javascript: (function() {
+  var inp = document.querySelectorAll("tr[bgcolor='#ffffff'] > td > input");
+  for (var i = 0; i < inp.length; i++){ inp[i].checked = true; }
+}());
+``` 
+
+## Q & A?
+
+### These are not working! 
+
+I use (and recommend) Firefox and haven't tried on other browsers, so please [report it](https://github.com/lvm/gmail-basic-html-bookmarklets/issues) if you found an issue.
+
+### How can I add a bookmarklet?
+
+That'll depend on your browser.
+
+* [Mozilla Firefox](https://support.mozilla.org/en-US/kb/bookmarklets-perform-common-web-page-tasks)
+* [Google Chrome](https://support.google.com/chrome/answer/188842?co=GENIE.Platform%3DDesktop&hl=en)
+* [Apple Safari](https://support.apple.com/guide/safari/bookmark-webpages-that-you-want-to-revisit-ibrw1039/mac)
+
+
+## LICENSE
+
+See [LICENSE](LICENSE)
