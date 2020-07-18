@@ -1,6 +1,6 @@
 # Bookmarklets for Gmail Basic HTML version :email: :dash:
 
-I prefer the [basic version](https://mail.google.com/?ui=html) because it's way simpler but perhaps _too simple_, so let me introduce these bookmarklets are in order to have a better ux.  
+I prefer the [basic version](https://mail.google.com/?ui=html) because it's way simpler but perhaps _too simple_, so let me introduce these bookmarklets in order to offer a better ux.  
 Just in case you're wondering wtf are they:
 
 > Bookmarklets are unobtrusive JavaScripts stored as the URL of a bookmark in a web browser or as a hyperlink on a web page.
